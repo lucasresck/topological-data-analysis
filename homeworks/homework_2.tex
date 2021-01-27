@@ -1,0 +1,74 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+
+\title{Homework 2\\
+    \large{Topological Data Analysis with Persistent Homology}}
+\author{Lucas Emanuel Resck Domingues\\    
+    Professor: Raphaël Tinarrage\\\\
+    {Escola de Matemática Aplicada}\\
+    {Fundação Getulio Vargas}}
+\date{\today}
+
+% \usepackage{natbib}
+\usepackage{graphicx}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+
+\begin{document}
+
+    \maketitle
+
+    \noindent\textbf{Exercise 8.} \textit{Show that the topological spaces $\mathbb{R}^n$ and $\mathcal{B}(0, 1) \subset \mathbb{R}^n$ are homeomorphic.}\\
+
+    Let $f$ be the map
+    \begin{align*}
+        f: \ &\mathcal{B}(0, 1) \to \mathbb{R}^n\\
+        &x \mapsto \begin{cases}
+            \dfrac{x}{\lVert x \lVert} \tan\left(\dfrac{\pi}{2}\lVert x \lVert \right), &x \ne 0\\
+            0, &x = 0
+        \end{cases}
+    \end{align*}
+
+    If we take two different $x_1 \ne x_2$:
+    \begin{itemize}
+        \item if one is multiple of the other: they will have different modules, because $\tan\left(\dfrac{\pi}{2}\lVert x_1 \lVert \right) \ne \tan\left(\dfrac{\pi}{2}\lVert x_2 \lVert \right)$
+        \item if one is not multiple of the other: they will continue not being multiple of the other.
+    \end{itemize}
+    So the function is injective.
+
+    For each point $y \ne 0 \in \mathbb{R}^n$, we can reach it by taking $x = \dfrac{y}{\lVert y \lVert} \dfrac{2}{\pi}\arctan\lVert y \lVert$.
+    So the function is surjective. We conclude $f$ is bijective.
+
+    Considering the above, we arrive with the following inverse function:
+    \begin{align*}
+        f^{-1}: \ &\mathbb{R}^n \to \mathcal{B}(0, 1)\\
+        &y \mapsto \begin{cases}
+            \dfrac{y}{\lVert y \lVert} \dfrac{2}{\pi}\arctan\lVert y \lVert, &y \ne 0\\
+            0, &y = 0
+        \end{cases}
+    \end{align*}
+
+    The two functions are clearly continuous out of zero. In order to check if they are continuous at zero, we will consider the module of the functions.
+    
+    \begin{align*}
+            \lVert f(x) \lVert &= \begin{cases}
+            \left\lVert \dfrac{x}{\lVert x \lVert} \tan\left(\dfrac{\pi}{2}\lVert x \lVert \right) \right\lVert, &x \ne 0\\
+            0, &x = 0
+        \end{cases}\\
+        &= \begin{cases}
+            \tan\left(\dfrac{\pi}{2}\lVert x \lVert \right), &x \ne 0\\
+            0, &x = 0
+        \end{cases}\\
+        &\to_{x \to 0} 0
+    \end{align*}
+
+    The same for $f^{-1}$. So the functions are continuous at zero, therefore continuous. This way, $f$ is a homeomorphism.\\
+
+    \noindent\textbf{Exercise 11.} \textit{Show that $[0, 1)$ and $(0, 1)$ are not homeomorphic.}\\
+
+    Suppose there is a homeomorphism $f$ between $[0, 1)$ and $(0, 1)$.
+    So $$g: [0, 1)\backslash\{0\} = (0, 1) \to (0, 1)\backslash\{f(0)\}$$
+    must be a homeomorphism too. $(0, 1)$ has one connected component, and $(0, 1)\backslash\{f(0)\}$, because of $f(0) \in (0, 1)$, has two connected components.
+    This is a contradiction.
+
+\end{document}
