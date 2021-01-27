@@ -1,0 +1,45 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+
+\title{Homework 1\\
+    \large{Topological Data Analysis with Persistent Homology}}
+\author{Lucas Emanuel Resck Domingues\\    
+    Professor: Raphaël Tinarrage\\\\
+    {Escola de Matemática Aplicada}\\
+    {Fundação Getulio Vargas}}
+\date{\today}
+
+% \usepackage{natbib}
+\usepackage{graphicx}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+
+\begin{document}
+
+    \maketitle
+
+    \noindent\textbf{Exercise 4.} Consider a point $z \in \mathcal{B}\left(\dfrac{x+y}{2}, \dfrac{r}{2}\right)$, that is, $\left\lVert z - \dfrac{x+y}{2}\right\lVert < \dfrac{r}{2}$.
+    We know that $\left\lVert x - \dfrac{x+y}{2}\right\lVert = \left\lVert\dfrac{x-y}{2} \right\lVert = \dfrac{r}{2}$. This way, we see that
+    \begin{align*}
+        \lVert z - x \lVert &= \left\lVert z - \dfrac{x+y}{2} + \dfrac{x+y}{2} - x \right\lVert\\
+        &\le \left\lVert z - \dfrac{x+y}{2}\right\lVert + \left\lVert \dfrac{x+y}{2} - x \right\lVert\\
+        &< \dfrac{r}{2} + \dfrac{r}{2}\\
+        &= r
+    \end{align*}
+    Therefore, $z \in \mathcal{B}(x, r)$.
+    
+    Similarly, we can show that $z \in \mathcal{B}(y, r)$. So we conclude that $z \in \mathcal{B}(x, r) \cap \mathcal{B}(y, r)$, which means $\mathcal{B}\left(\dfrac{x+y}{2}, \dfrac{r}{2}\right) \subset \mathcal{B}(x, r) \cap \mathcal{B}(y, r)$.\\\\
+
+    \noindent\textbf{Exercise 5.} Consider an open ball $\mathcal{B}(x, r)$ of $\mathbb{R}^n$.
+    Take an arbitrary point inside it, let's call it $y$.
+    So $\lVert x - y \lVert < r$.
+    
+    Now, consider the open ball $\mathcal{B}(y, d)$, with $d = r - \lVert x - y \lVert$.
+    Because $\lVert x - y \lVert < r$, we have $d > 0$.
+    If we take a point $z$ inside this open ball, we will have $\lVert y - z \lVert < d = r - \lVert x - y \lVert$.
+    Well, it's the same of $\lVert y - z \lVert + \lVert x - y \lVert < r$, that is, by triangle inequality, $\lVert x - z \lVert < r$.
+    We can say that $z \in \mathcal{B}(x, r)$ and $\mathcal{B}(y, d) \subset \mathcal{B}(x, r)$.
+    
+    We can conclude that, for any point $y$ of the open ball $\mathcal{B}(x, r)$, there is another open ball $\mathcal{B}(y, d)$ that contains $y$ but also $\mathcal{B}(y, d) \subset \mathcal{B}(x, r)$, that is, $\mathcal{B}(x, r)$ is open.
+
+\end{document}
