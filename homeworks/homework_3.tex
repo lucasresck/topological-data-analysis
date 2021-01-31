@@ -28,6 +28,39 @@
         F \colon \mathbb{R}^n \times [0, 1] &\longrightarrow X \\
         (x, t) &\longmapsto f(xt)
     \end{align*}
-    We have $F(\cdot, 0) \colon x \to f(0)$ constant and $F(\cdot, 1) = f$.
+    We have $F(\cdot, 0) \colon x \to f(0)$ constant and $F(\cdot, 1) = f$. \\ \\
+
+    \noindent\textbf{Exercise 13.} \textit{Let $f \colon \mathbb{S}_1 \to \mathbb{S}_2$ be a continuous map which is not surjective.
+    Prove that it is homotopic to a constant map.} \\
+
+    Take $x_0$ outside of the image of $f$ but on $\mathbb{S}_2$, that is, $x_0 \in \mathbb{S}_2$ such as $x_0 \notin f(\mathbb{S}_1)$.
+    Our constant map will be $g \colon x \mapsto -x_0$.
+
+    Consider the following continuous application:
+    \begin{align*}
+        F \colon \mathbb{S}_1 \times [0, 1] &\longrightarrow \mathbb{S}_2 \\
+        (x, t) &\longmapsto \dfrac{(1-t) f(x) - t x_0}{\lVert (1-t) f(x) - t x_0 \lVert}
+    \end{align*}
+
+    We are doing a convex combination between the points of the image of $f$ and our point $-x_0$. Because $x_0$ is not on the image, the convex combination never passes through the origin, hence the denominator is never zero, therefore $F$ is continuous.
+
+    Note that $F(\cdot, 0) = f$ and $F(\cdot, 1) \colon x \mapsto -x_0$. \\\\
+
+    \noindent\textbf{Exercise 14.} \textit{Show that being homotopic is a transitive relation between maps:
+    for every triplet of maps $f, g, h \colon X \to Y$, if $f, g$ are homotopic and $g, h$ are homotopic, than $f, h$ are homotopic.} \\
+
+    Because $f, g$ are homotopic, we know there must exist a homotopy.
+    Let's call it $F \colon X \times [0, 1] \to Y$.
+    The same for $g, h$:
+    $G \colon X \times [0, 1] \to Y$.
+    Consider now the following continuous application:
+    \begin{align*}
+        H \colon X \times [0, 1] &\longrightarrow Y \\
+        (x, t) &\mapsto (1 - t) F(x, 0) + t G(x, 1)
+    \end{align*}
+
+    Because $F, G$ are continuous, $H$ is continuous too.
+    We can deduce now that $H(\cdot, 0) = F(\cdot, 0) = f$ and $H(\cdot, 1) = G(\cdot, 1) = h$.
+    Therefore, $f, h$ are homotopic.
 
 \end{document}
