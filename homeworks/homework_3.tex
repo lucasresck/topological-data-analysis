@@ -1,0 +1,33 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+
+\title{Homework 3\\
+    \large{Topological Data Analysis with Persistent Homology}}
+\author{Lucas Emanuel Resck Domingues\\    
+    Professor: Raphaël Tinarrage\\\\
+    {Escola de Matemática Aplicada}\\
+    {Fundação Getulio Vargas}}
+\date{\today}
+
+% \usepackage{natbib}
+\usepackage{graphicx}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+
+\begin{document}
+
+    \maketitle
+
+    \noindent\textbf{Proposition 3.8.} \textit{Let $f \colon    \mathbb{R}^n \to X$ be a continuous map.
+    Then $f$ is homotopic to a constant map.} \\
+
+    \noindent\textbf{Exercise 12.} \textit{Prove the previous proposition.} \\
+
+    Consider the continuous application:
+    \begin{align*}
+        F \colon \mathbb{R}^n \times [0, 1] &\longrightarrow X \\
+        (x, t) &\longmapsto f(xt)
+    \end{align*}
+    We have $F(\cdot, 0) \colon x \to f(0)$ constant and $F(\cdot, 1) = f$.
+
+\end{document}
