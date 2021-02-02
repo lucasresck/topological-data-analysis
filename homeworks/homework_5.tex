@@ -35,6 +35,45 @@
         a + b &= b + a
     \end{align*}
 
-    We got where we wanted to go.    
+    We got where we wanted to go. \\\\
+
+    \noindent \textbf{Exericse 29.} \textit{Compute the Betti numbers $\beta_0(K)$, $\beta_1(K)$ and $\beta_2(K)$ of the following simplicial complex:
+    $$K = \{[0], [1], [2], [3], [0, 1], [1, 2],  [2, 3], [3, 0]\}$$}
+
+    Because $C_0(K)$ only has sums of simplices of dimension 0, $Z_0(K) = \textrm{Ker}(\partial_0)$ is just the $C_0(K)$.
+    This vector space has basis $\{[0], [1], [2], [3]\}$, so its dimension is 4. That is, $\textrm{dim } Z_0(K) = 4$.
+
+    We compute $C_1(K)$:
+    \begin{gather*}
+        C_1(K) = \{0,
+        [0, 1], [0, 2], [2, 3], [3, 0],
+        [0, 1] + [0, 2], [0, 1] + [2, 3], [0, 1] + [3, 0], \\ [0, 2] + [2, 3], [0, 2] + [3, 0], [2, 3] + [3, 0],
+        [0, 1] + [0, 2] + [2, 3], \\ [0, 1] + [0, 2] + [3, 0], [0, 1] + [2, 3] + [3, 0], [0, 2] + [2, 3] + [3, 0], \\
+        [0, 1] + [0, 2] + [2, 3] + [3, 0]\}
+    \end{gather*}
+
+    We now have
+    \begin{align*}
+        B_0(K) &= \textrm{Im}(\partial_1) \\
+        &= \partial_1(C_1(K)) \\
+        &= \{0, [0]+[1], [0]+[2], [2]+[3], [3]+[0], \\
+        & \ \ \ \ [1]+[2], [1]+[3], [0]+[1]+[2]+[3]\}
+    \end{align*}
+    
+    That is, $\textrm{dim } B_0(K) = 3$.
+    We conclude, therefore, that $\beta_0(K) = 4 - 3 = 1$.
+
+    Note that $\textrm{Ker}(\partial_1) = \{0, [0, 1]+[1, 2]+[2, 3]+[3, 0]\}$, so $\textrm{dim } B_1(K) = 1$. We also have that $B_1(K) = \textrm{Im}(\partial_2) = \partial_2(C_2(K)) = \partial_2(\{0\}) = \{0\}$.
+    We conclude that $\beta_1(K) = 1$.
+
+    Finally, we have:
+    \begin{align*}
+        \beta_2(K) &= \textrm{dim }Z_2(K) - \textrm{dim }B_2(K) \\
+        &= \textrm{Ker}(\partial_2) - \textrm{Im}(\partial_3)(K) \\
+        &= \textrm{dim Ker}(\partial_2) - \textrm{dim Im}(\partial_3)(K) \\
+        &= \textrm{dim }C_2(K) - \textrm{dim }\partial_3(C_3(K)) \\
+        &= \textrm{dim }\{0\} - \textrm{dim }\partial_3(\{0\}) \\
+        &= 0
+    \end{align*}
 
 \end{document}
