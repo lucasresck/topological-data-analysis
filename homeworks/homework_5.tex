@@ -1,0 +1,40 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+
+\title{Homework 5\\
+    \large{Topological Data Analysis with Persistent Homology}}
+\author{Lucas Emanuel Resck Domingues\\    
+    Professor: Raphaël Tinarrage\\\\
+    {Escola de Matemática Aplicada}\\
+    {Fundação Getulio Vargas}}
+\date{\today}
+
+% \usepackage{natbib}
+\usepackage{graphicx}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+
+\begin{document}
+
+    \maketitle
+
+    \noindent \textbf{Exercise 28.} \textit{Let $(G, +)$ be a group, potentially non-commutative.
+    Prove that
+    $$\forall g \in G,\ g + g = 0 \Longrightarrow \textrm{$G$ is commutative.}$$}
+
+    Take two arbitrary point $a, b \in G$.
+    Follow this:
+    \begin{align*}
+        (a + b) + (a + b) &= 0 \\
+        a + b + a + b &= 0 \ \ \ \ \textrm{(associativity)}\\
+        a + b + a + b + b &= b \\
+        a + b + a + 0 &= b \ \ \ \ \textrm{(our assumption)}\\
+        a + b + a &= b \ \ \\
+        a + b + a + a &= b + a \\
+        a + b + 0 &= b + a \\
+        a + b &= b + a
+    \end{align*}
+
+    We got where we wanted to go.    
+
+\end{document}
