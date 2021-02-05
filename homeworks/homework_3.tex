@@ -56,10 +56,15 @@
     Consider now the following continuous application:
     \begin{align*}
         H \colon X \times [0, 1] &\longrightarrow Y \\
-        (x, t) &\mapsto (1 - t) F(x, 0) + t G(x, 1)
+        (x, t) &\mapsto \begin{cases}
+            F(x, 2t), &t \in [0, 0.5) \\
+            G(x, 2t - 1), &t \in [0.5, 1]
+        \end{cases}
     \end{align*}
 
-    Because $F, G$ are continuous, $H$ is continuous too.
+    For every $t \in [0, 0.5) \cup (0.5, 1]$, because $F, G$ are both continuous.
+    When $t = 0.5$, we will end up with $F(x, 2t) = F(x, 1) = G(x, 0) = G(x, 2t - 1)$, for every $x$, so the continuity also holds for $t = 0.5$.
+    We conclude $H$ is continuous.
     We can deduce now that $H(\cdot, 0) = F(\cdot, 0) = f$ and $H(\cdot, 1) = G(\cdot, 1) = h$.
     Therefore, $f, h$ are homotopic. \\\\
 
