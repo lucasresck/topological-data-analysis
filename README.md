@@ -42,3 +42,21 @@ GIF             |  Path in high dimensional space
 
 It makes sense to have a loop, because the GIF repeats itself, but also to have an intersection, because the left and right sides of the object are very similar.
 When we apply TDA techniques, we discover this **GIF has the topology of an eight**, that is, **one connected object with two holes**.
+
+## Setup
+
+Clone this repository:
+```bash
+git clone https://github.com/lucasresck/topological-data-analysis/
+```
+The main library is [GUDHI](https://gudhi.inria.fr/).
+Create a Conda environment with the required libraries:
+```bash
+cd topological-data-analysis
+conda env create -f environment.yml
+```
+Activate the environment:
+```bash
+conda activate topological-data-analysis
+```
+You are good to go :)
