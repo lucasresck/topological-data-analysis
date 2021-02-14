@@ -15,16 +15,26 @@ TDA is a subject which aims to use various tecniques from Mathematical Topology 
 Among the many, many things studied, there are:
 - **Usual Mathematical Topology**, such as topological spaces, homeomorphisms and homotopies;
 - **Simplicial complexes**, which are the tools used to "simplify" the representation of a topological object;
-- **Homologycal algebra**, the set of tools used to say that our dataset is "equal" for a circle, for example;
+- **Homologycal algebra**, the set of tools used to say that our dataset is "equal" to a circle, for example;
 - **Algorithms**, such as Incremental Algorithm and Persistent Homology Algorithm;
 - More definitions and various theorems, the Stability Theorem the most important of them.
 
 ## Examples
 
+### Cloud of points
+
+If we have a cloud of points and we want to know the topology of this cloud, we create what is called a t-thickening: over each point, we put a circle with radius t.
+
+Cloud of points             |  t-thickening
+:-------------------------:|:-------------------------:
+<img src="https://raw.githubusercontent.com/lucasresck/topological-data-analysis/main/figures/cloud.png" width="250">  |  <img src="https://raw.githubusercontent.com/lucasresck/topological-data-analysis/main/figures/t_thickening.png" width="300">
+
+We will end up with a new object, and we can apply various TDA techniques in order to prove that **this object is homotopy equivalent to a circunference**.
+
 ### What is the topology of this GIF?
 
 A GIF is composed by various images.
-If each image is a point in a high dimensional space, when we apply a dimensionality reduction it would look like this:
+If each image is a point in a high dimensional space, when we apply a dimensionality reduction it looks like this:
 
 GIF             |  Path in high dimensional space
 :-------------------------:|:-------------------------:
