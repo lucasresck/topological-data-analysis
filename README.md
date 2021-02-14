@@ -15,7 +15,7 @@ TDA is a subject which aims to use various tecniques from Mathematical Topology 
 Among the many, many things studied, there are:
 - **Usual Mathematical Topology**, such as topological spaces, homeomorphisms and homotopies;
 - **Simplicial complexes**, which are the tools used to "simplify" the representation of a topological object;
-- **Homologycal algebra**, the set of tools used to say that our dataset is "equal" for a circle, for example;
+- **Homologycal algebra**, the set of tools used to say that our dataset is "equal" to a circle, for example;
 - **Algorithms**, such as Incremental Algorithm and Persistent Homology Algorithm;
 - More definitions and various theorems, the Stability Theorem the most important of them.
 
